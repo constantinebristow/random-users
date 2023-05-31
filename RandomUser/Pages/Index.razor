@@ -31,6 +31,7 @@ else
 	private RandomUserRequestBody? randomUserRequestBody = new RandomUserRequestBody();
 	private bool getUsersError;
 	private bool shouldRender;
+	private string randomUserURL = @"https://randomuser.me/api/?results=5&noinfo";
 
 	protected override bool ShouldRender() => shouldRender;
 
@@ -38,7 +39,7 @@ else
 	{
 
 		var request = new HttpRequestMessage(HttpMethod.Get,
-			"https://randomuser.me/api/?results=5&noinfo");
+			randomUserURL);
 
 		var client = ClientFactory.CreateClient();
 
